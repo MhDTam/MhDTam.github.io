@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammed Abdulsalam — Software Developer</title>
+<meta name="description" content="Mohammed Abdulsalam — software developer building Windows desktop apps, multiplayer web games and mobile apps with Rust, C++, Flutter and TypeScript.">
+<meta property="og:title" content="Mohammed Abdulsalam — Software Developer">
+<meta property="og:description" content="Windows desktop apps, multiplayer web games and mobile apps.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/331847314?v=4">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/331847314?s=64&v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfbfa; --bg-2:#f3f4f6; --card:#ffffff; --text:#111318; --muted:#5b616e; --faint:#9aa0ab;
+  --line:#e6e7ea; --accent:#2563eb; --accent-soft:#e8efff; --accent-ink:#ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0e12; --bg-2:#13161c; --card:#14171d; --text:#eceef2; --muted:#a2a8b4; --faint:#6b717d;
+    --line:#242832; --accent:#5b8cff; --accent-soft:#18213a; --accent-ink:#0c0e12;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c0e12; --bg-2:#13161c; --card:#14171d; --text:#eceef2; --muted:#a2a8b4; --faint:#6b717d;
+  --line:#242832; --accent:#5b8cff; --accent-soft:#18213a; --accent-ink:#0c0e12;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font:600 13px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.brand span{color:var(--accent)}
+.links{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+#theme{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;display:grid;place-items:center}
+#theme:hover{color:var(--text)}
+@media (max-width:720px){.links a.hide-sm{display:none}}
+
+/* hero */
+.hero{padding:96px 0 72px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 70% 0%,#000 0%,transparent 65%);opacity:.6;pointer-events:none}
+.hero .wrap{position:relative}
+.eyebrow{font:500 12px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+h1{font:700 clamp(36px,6vw,64px)/1.08 "Space Grotesk",sans-serif;letter-spacing:-.02em;max-width:820px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-row{display:flex;gap:40px;align-items:flex-end;justify-content:space-between;margin-top:36px;flex-wrap:wrap}
+.lede{max-width:600px;color:var(--muted);font-size:17px}
+.lede b{color:var(--text);font-weight:600}
+.avatar{width:120px;height:120px;border-radius:20px;border:1px solid var(--line);object-fit:cover;background:var(--bg-2)}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 13px "JetBrains Mono",monospace;padding:12px 18px;border-radius:8px;border:1px solid var(--line);background:var(--card);transition:.15s}
+.btn:hover{border-color:var(--text)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:48px}
+.stack span{font:500 12px "JetBrains Mono",monospace;color:var(--muted);padding:6px 10px;border:1px dashed var(--line);border-radius:6px}
+
+/* sections */
+section{padding:88px 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:80px 1fr;gap:24px;margin-bottom:44px}
+.sec-num{font:500 13px "JetBrains Mono",monospace;color:var(--accent);padding-top:10px}
+h2{font:700 clamp(28px,4vw,40px)/1.15 "Space Grotesk",sans-serif;letter-spacing:-.015em}
+.sec-head p{color:var(--muted);margin-top:12px;max-width:640px}
+@media (max-width:600px){.sec-head{grid-template-columns:1fr;gap:6px}}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p{color:var(--muted);margin-bottom:16px}
+.about p b{color:var(--text);font-weight:600}
+.facts{border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.facts div:last-child{border:0}
+.facts dt{color:var(--faint);font-family:"JetBrains Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
+.facts dd{text-align:right}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+
+/* featured */
+.feat{display:grid;gap:20px}
+.fcard{display:grid;grid-template-columns:90px 1fr auto;gap:28px;padding:32px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:.2s}
+.fcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.fnum{font:600 13px "JetBrains Mono",monospace;color:var(--faint)}
+.tag{font:500 11px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.fcard h3{font:700 26px/1.2 "Space Grotesk",sans-serif;margin-bottom:10px}
+.fcard h3 small{font:500 18px Inter,sans-serif;color:var(--faint);margin-left:8px}
+.fcard p{color:var(--muted);max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.chips span{font:500 11.5px "JetBrains Mono",monospace;padding:4px 9px;border-radius:5px;background:var(--accent-soft);color:var(--accent)}
+.arrow{font:400 22px "JetBrains Mono",monospace;color:var(--faint);align-self:start}
+.fcard:hover .arrow{color:var(--accent)}
+@media (max-width:720px){.fcard{grid-template-columns:1fr;gap:10px;padding:24px}.arrow{display:none}}
+
+.grid-head{display:flex;justify-content:space-between;align-items:center;margin:56px 0 18px;gap:12px;flex-wrap:wrap}
+.grid-head h4{font:600 12px "JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:500 12px "JetBrains Mono",monospace;border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 11px;border-radius:999px;cursor:pointer}
+.filters button.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--card);transition:.2s}
+.card:hover{border-color:var(--accent)}
+.card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.card .lang{font:500 11.5px "JetBrains Mono",monospace;color:var(--muted);display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:50%}
+.card h5{font:600 19px "Space Grotesk",sans-serif;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14.5px;flex:1}
+.card .foot{margin-top:16px;font:500 12px "JetBrains Mono",monospace;color:var(--accent)}
+.card[hidden]{display:none}
+
+/* experience */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.stat{padding:28px;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat b{display:block;font:700 40px/1 "Space Grotesk",sans-serif;margin-bottom:10px}
+.stat span{color:var(--muted);font-size:14px}
+@media (max-width:820px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.skill{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.skill h6{font:600 12px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.skill ul{list-style:none;display:grid;gap:8px;font-size:14.5px;color:var(--muted)}
+.skill li::before{content:"→ ";color:var(--faint);font-family:"JetBrains Mono",monospace}
+@media (max-width:820px){.skills{grid-template-columns:1fr}}
+
+/* contact */
+.contact{text-align:left}
+.contact h2{font-size:clamp(32px,5vw,52px);max-width:760px}
+.contact p{color:var(--muted);margin:16px 0 32px;max-width:560px}
+.mail{font:500 clamp(16px,2.6vw,22px) "JetBrains Mono",monospace;color:var(--accent);border-bottom:1px solid currentColor;word-break:break-all}
+
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--faint);font:400 12.5px "JetBrains Mono",monospace}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="brand">Mohammed Abdulsalam <span>//</span> Dev</a>
+    <div class="links">
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#work">Work</a>
+      <a href="#experience" class="hide-sm">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Software Developer · Desktop · Games · Mobile</div>
+    <h1>I build fast <em>Windows apps</em>, multiplayer games and mobile tools.</h1>
+    <div class="hero-row">
+      <div>
+        <p class="lede">I'm <b>Mohammed Abdulsalam</b>. I ship native desktop software in <b>Rust</b>, <b>C++</b> and <b>Flutter</b>, real-time web games with <b>Node.js</b> and <b>WebSockets</b>, and Android apps — most of them with full <b>Arabic &amp; English</b> interfaces.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">Featured work ↓</a>
+          <a class="btn" href="mailto:mohammadabdulsalam88@gmail.com">Email me</a>
+          <a class="btn" href="https://github.com/MhDTam" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/331847314?s=240&v=4" alt="Mohammed Abdulsalam">
+    </div>
+    <div class="stack">
+      <span>Rust</span><span>C++</span><span>C#</span><span>Dart / Flutter</span><span>TypeScript</span><span>JavaScript</span><span>Tauri</span><span>React</span><span>Three.js</span><span>Node.js</span><span>WebSockets</span>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="sec-num">01</div><div><h2>About</h2></div></div>
+    <div class="about reveal">
+      <div>
+        <p>I'm a software developer focused on <b>practical tools people use every day</b> — screen capture and annotation, audio players and editors, file transfer, subtitle syncing, frame pacing and storage caching for Windows.</p>
+        <p>Alongside desktop work, I build <b>real-time multiplayer games</b> rooted in Iraqi culture — card games and a location-guessing game — playable in the browser in Arabic or English, plus Android apps like a document reader with annotations and page-linked notes.</p>
+        <p>I care about native performance, clean UI and <b>first-class bilingual support</b> (RTL Arabic and English) from day one.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Focus</dt><dd>Desktop · Games · Mobile</dd></div>
+        <div><dt>Platforms</dt><dd>Windows · Web · Android</dd></div>
+        <div><dt>Languages</dt><dd>Rust · C++ · C# · Dart · TS</dd></div>
+        <div><dt>Interfaces</dt><dd>Arabic &amp; English</dd></div>
+        <div><dt>GitHub</dt><dd><a href="https://github.com/MhDTam" target="_blank" rel="noopener" style="color:var(--accent)">@MhDTam ↗</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="sec-num">02</div><div><h2>Featured work</h2><p>A selection of desktop apps, games and tools I've built and published on GitHub.</p></div></div>
+
+    <div class="feat">
+      <a class="fcard reveal" href="https://github.com/MhDTam/SuperHDD" target="_blank" rel="noopener">
+        <div class="fnum">001</div>
+        <div>
+          <div class="tag">★ Open source · Windows · Storage</div>
+          <h3>SuperHDD</h3>
+          <p>A Windows desktop app that adds SSD-backed caching to selected game and application folders on hard drives — so the things you launch most load at SSD speed without moving them.</p>
+          <div class="chips"><span>Rust</span><span>Tauri</span><span>React</span><span>C++</span></div>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="fcard reveal" href="https://wain-bil-iraq.pages.dev/" target="_blank" rel="noopener">
+        <div class="fnum">002</div>
+        <div>
+          <div class="tag">★ Live · Web game</div>
+          <h3>Wain Bil Iraq <small>وين بالعراق</small></h3>
+          <p>Explore Iraq through a location-guessing game. Drop into a place, read the clues and pin where you think you are.</p>
+          <div class="chips"><span>Flutter</span><span>Dart</span><span>Play now</span></div>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+      <a class="fcard reveal" href="https://github.com/MhDTam/Markora-Releases" target="_blank" rel="noopener">
+        <div class="fnum">003</div>
+        <div>
+          <div class="tag">★ Windows · Productivity</div>
+          <h3>Markora</h3>
+          <p>A Windows screenshot and annotation app with Arabic and English support, mini capture mode and glass themes.</p>
+          <div class="chips"><span>Desktop</span><span>Bilingual</span><span>Releases</span></div>
+        </div>
+        <div class="arrow">↗</div>
+      </a>
+    </div>
+
+    <div class="grid-head">
+      <h4>More projects</h4>
+      <div class="filters" role="tablist">
+        <button class="on" data-f="all">All</button>
+        <button data-f="desktop">Desktop</button>
+        <button data-f="games">Games</button>
+        <button data-f="mobile">Mobile</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="sec-num">03</div><div><h2>Experience &amp; skills</h2></div></div>
+    <div class="stats reveal">
+      <div class="stat"><b id="repoCount">14</b><span>public projects on GitHub</span></div>
+      <div class="stat"><b>6+</b><span>languages used in production</span></div>
+      <div class="stat"><b>3</b><span>platforms: Windows, Web, Android</span></div>
+      <div class="stat"><b>AR/EN</b><span>bilingual interfaces</span></div>
+    </div>
+    <div class="skills reveal">
+      <div class="skill"><h6>Desktop</h6><ul><li>Native Windows apps in Rust &amp; C++</li><li>Tauri + React interfaces</li><li>Flutter for Windows</li><li>C# utilities &amp; automation</li><li>DX11 / DX12 integration</li></ul></div>
+      <div class="skill"><h6>Games &amp; Web</h6><ul><li>Real-time multiplayer with WebSockets</li><li>Node.js game servers</li><li>Three.js 3D mini-games</li><li>TypeScript front-ends</li><li>Deployed on Render &amp; Cloudflare Pages</li></ul></div>
+      <div class="skill"><h6>Mobile &amp; Media</h6><ul><li>Flutter / Dart Android apps</li><li>Document reading &amp; annotation</li><li>Audio playback, conversion &amp; editing</li><li>GPU-accelerated video export</li><li>RTL &amp; Arabic typography</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">04 — Contact</div>
+    <h2>Have a project or a role in mind? Let's talk.</h2>
+    <p>Open to freelance work, collaborations and engineering roles in desktop, games and mobile development.</p>
+    <a class="mail" href="mailto:mohammadabdulsalam88@gmail.com">mohammadabdulsalam88@gmail.com</a>
+    <div class="cta">
+      <a class="btn primary" href="mailto:mohammadabdulsalam88@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/MhDTam" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© <span id="yr">2026</span> Mohammed Abdulsalam</span><span>Built with HTML &amp; CSS · Hosted on GitHub Pages</span></div>
+</footer>
+
+<script>
+const LANG = {Rust:"#dea584","C++":"#f34b7d","C#":"#178600",Dart:"#00b4ab",TypeScript:"#3178c6",JavaScript:"#f1e05a",C:"#555555",Web:"#8b5cf6",Android:"#3ddc84",Windows:"#0078d4"};
+const P = [
+  {n:"FluxDrop",d:"Direct Wi-Fi file transfer for Windows — fast, local, no cloud in between.",l:"Windows",c:"desktop",u:"https://github.com/MhDTam/FluxDrop",f:"Downloads ↗"},
+  {n:"ToneHarbor",d:"A Windows music player, batch converter and audio editor in one app.",l:"Dart",c:"desktop",u:"https://github.com/MhDTam/ToneHarbor",f:"Repository ↗"},
+  {n:"SongSpread",d:"Low-latency Windows soundpad with microphone voice injection, built with Flutter & C++.",l:"C",c:"desktop",u:"https://github.com/MhDTam/SongSpread",f:"Repository ↗"},
+  {n:"Softsub",d:"Soft-subtitle merging with batch matching and synchronization for Windows.",l:"TypeScript",c:"desktop",u:"https://github.com/MhDTam/Softsub",f:"Latest release ↗"},
+  {n:"FrameFlow",d:"Windows frame pacing utility with experimental DX11/DX12 integration.",l:"C++",c:"desktop",u:"https://github.com/MhDTam/FrameFlow",f:"Repository ↗"},
+  {n:"Qaseeda Template",d:"Offline Arabic/English audio visualizer with animated backgrounds and GPU-accelerated video export.",l:"C++",c:"desktop",u:"https://github.com/MhDTam/qaseeda-template",f:"Repository ↗"},
+  {n:"ShutdownSteam",d:"Portable Steam download watcher with local game icons and automated completion actions.",l:"C#",c:"desktop",u:"https://github.com/MhDTam/ShutdownSteam",f:"Repository ↗"},
+  {n:"Truth or Bluff · صدگ چذب",d:"Iraqi card game for 2–4 players. Play online in Arabic or English.",l:"Web",c:"games",u:"https://sadig-chathib.onrender.com",f:"Play now ↗"},
+  {n:"Call My Bluff · گول غيرها",d:"Iraqi multiplayer card game, playable online in Arabic or English.",l:"Web",c:"games",u:"https://gol-ghairha.onrender.com",f:"Play now ↗"},
+  {n:"Duo Arena",d:"Real-time 2-player online mini games with Three.js, Node.js & WebSockets — web and Android.",l:"JavaScript",c:"games",u:"https://github.com/MhDTam/Duo-Arena-2-Player-Games",f:"Repository ↗"},
+  {n:"Sonic Reader",d:"Android document reader with annotations, page-linked notes and Arabic & English interfaces.",l:"Android",c:"mobile",u:"https://github.com/MhDTam/Sonic-Reader",f:"Downloads ↗"}
+];
+const grid = document.getElementById('grid');
+grid.innerHTML = P.map(p=>`<a class="card" data-c="${p.c}" href="${p.u}" target="_blank" rel="noopener">
+  <div class="top"><span class="lang"><i class="dot" style="background:${LANG[p.l]||'#999'}"></i>${p.l}</span><span class="lang">${p.c}</span></div>
+  <h5>${p.n}</h5><p>${p.d}</p><div class="foot">${p.f}</div></a>`).join('');
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+  grid.querySelectorAll('.card').forEach(c=>c.hidden = b.dataset.f!=='all' && c.dataset.c!==b.dataset.f);
+});
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// theme
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme'); if(t) root.dataset.theme=t;}catch(e){}
+document.getElementById('theme').onclick=()=>{
+  const dark = root.dataset.theme ? root.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+};
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
