@@ -89,11 +89,11 @@ h2{font:700 clamp(28px,4vw,40px)/1.15 "Space Grotesk",sans-serif;letter-spacing:
 .fcard{display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center;padding:32px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:.2s;position:relative;overflow:hidden}
 .fcard .fnum{margin-bottom:14px}
 .fcard .arrow{position:absolute;top:24px;right:28px}
-.shots{position:relative;aspect-ratio:16/11}
-.shots img{position:absolute;border-radius:10px;border:1px solid var(--line);box-shadow:0 18px 40px -18px rgba(0,0,0,.35);object-fit:cover;object-position:top;background:var(--bg-2);transition:transform .35s ease}
-.shots img:first-child{inset:0 14% 14% 0;width:86%;height:86%;z-index:1}
-.shots img:last-child{inset:22% 0 0 26%;width:74%;height:78%;z-index:2}
-.fcard:hover .shots img:last-child{transform:translate(-6px,-6px)}
+.shots{position:relative;aspect-ratio:16/11;overflow:hidden;border-radius:10px;padding:0}
+.shots img{position:absolute;max-width:none;border-radius:10px;border:1px solid var(--line);box-shadow:0 18px 40px -18px rgba(0,0,0,.35);object-fit:cover;object-position:top;background:var(--bg-2);transition:transform .35s ease}
+.shots .s1{top:0;left:0;width:86%;height:86%;z-index:1}
+.shots .s2{top:22%;left:26%;width:74%;height:78%;z-index:2}
+.fcard:hover .shots .s2{transform:translate(-6px,-6px)}
 .fcard:nth-child(even){grid-template-columns:1.15fr 1fr}
 .fcard:nth-child(even) .shots{order:-1}
 .fcard:hover{border-color:var(--accent);transform:translateY(-2px)}
@@ -227,7 +227,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p>A Windows desktop app that adds SSD-backed caching to selected game and application folders on hard drives — so the things you launch most load at SSD speed without moving them.</p>
           <div class="chips"><span>Rust</span><span>Tauri</span><span>React</span><span>C++</span></div>
         </div>
-        <div class="shots"><img src="images/superhdd.webp" alt="SuperHDD home screen" loading="lazy"><img src="images/superhdd-2.webp" alt="SuperHDD performance screen in Arabic" loading="lazy"></div>
+        <div class="shots"><img class="s1" src="images/superhdd.webp" alt="SuperHDD home screen" loading="lazy"><img class="s2" src="images/superhdd-2.webp" alt="SuperHDD performance screen in Arabic" loading="lazy"></div>
         <div class="arrow">↗</div>
       </a>
       <a class="fcard reveal" href="https://github.com/MhDTam/Markora-Releases" target="_blank" rel="noopener">
@@ -238,7 +238,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p>A Windows screenshot and annotation app with Arabic and English support, a built-in editor, mini capture mode and glass themes.</p>
           <div class="chips"><span>Desktop</span><span>Annotation</span><span>Arabic / English</span></div>
         </div>
-        <div class="shots"><img src="images/markora.webp" alt="Markora home screen" loading="lazy"><img src="images/markora-2.webp" alt="Markora annotation editor" loading="lazy"></div>
+        <div class="shots"><img class="s1" src="images/markora.webp" alt="Markora home screen" loading="lazy"><img class="s2" src="images/markora-2.webp" alt="Markora annotation editor" loading="lazy"></div>
         <div class="arrow">↗</div>
       </a>
       <a class="fcard reveal" href="https://github.com/MhDTam/ToneHarbor" target="_blank" rel="noopener">
@@ -249,7 +249,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p>A Windows music player, batch audio converter and audio editor in one app — with a full-screen player and Arabic &amp; English interfaces.</p>
           <div class="chips"><span>Flutter</span><span>Dart</span><span>Audio</span><span>Arabic / English</span></div>
         </div>
-        <div class="shots"><img src="images/toneharbor.webp" alt="ToneHarbor library" loading="lazy"><img src="images/toneharbor-2.webp" alt="ToneHarbor full player" loading="lazy"></div>
+        <div class="shots"><img class="s1" src="images/toneharbor.webp" alt="ToneHarbor library" loading="lazy"><img class="s2" src="images/toneharbor-2.webp" alt="ToneHarbor full player" loading="lazy"></div>
         <div class="arrow">↗</div>
       </a>
     </div>
